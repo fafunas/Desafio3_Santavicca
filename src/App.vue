@@ -2,11 +2,14 @@
   <div id="App">
     <navbar class="p-2"/>
     <banner texto="Listado Personal"/>
-    <personal/>
+    <personal :estilo="'list-even'" :personas="personas"/>
+    <hr>
+    <personal :estilo="'list-odd'" :personas="personas"/>
   </div>
 </template>
 
 <script>
+import personas from './assets/data/personas.json'
 import navbar from './components/navbar.vue'
 import banner from './components/banner.vue'
 import personal from './components/personal.vue'
@@ -17,7 +20,13 @@ export default {
     navbar,
     banner,
     personal
-  }
+  },
+  data() {
+    return {
+      personas
+      
+    }
+  },
 }
 </script>
 

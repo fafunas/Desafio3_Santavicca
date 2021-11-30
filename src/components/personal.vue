@@ -18,7 +18,12 @@
 </template>
 
 <script>
-export default {};
+export default {
+  props: {
+    personas: Array,
+    estilo: String
+  }
+};
 </script>
 
 <style>
