@@ -1,42 +1,34 @@
 <template>
-  <div id="App">
-    <navbar class="p-2"/>
-    <banner texto="Listado Personal"/>
-    <personal :estilo="'list-even'" :personas="personas"/>
-    <hr>
-    <personal :estilo="'list-odd'" :personas="personas"/>
-  </div>
+  <v-app>
+    <navbar />
+
+    <v-row class="mt-12">
+      <v-col cols="6">
+        <personal :estilo="'list-even'"  />
+      </v-col>
+      <v-col cols="6">
+        <personal :estilo="'list-odd'" />
+      </v-col>
+    </v-row>
+
+  <v-footer>
+    <banner/>
+  </v-footer>
+  </v-app>
 </template>
 
 <script>
-import personas from './assets/data/personas.json'
-import navbar from './components/navbar.vue'
-import banner from './components/banner.vue'
-import personal from './components/personal.vue'
+import navbar from "./components/navbar.vue";
+import personal from "./components/personal.vue";
+import banner from './components/banner.vue';
 
 export default {
-  name: 'App',
-  components: {
-    navbar,
-    banner,
-    personal
-  },
-  data() {
-    return {
-      personas
-      
-    }
-  },
-}
+  components: { navbar, personal, banner },
+  props:{
+    estilo:String
+  }
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style >
 </style>

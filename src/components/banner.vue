@@ -1,6 +1,6 @@
 <template>
     <div class="banner">
-        <h2>{{texto}}</h2>
+        <h3>{{texto}}</h3>
     </div>
 </template>
 
@@ -9,11 +9,7 @@
         props:{
             texto:{
                 type: String,
-                default: "Texto Default"
-            },
-            imagen:{
-                type: String,
-                default: ""
+                default: "Pie de Pagina"
             }
         }
     }
@@ -21,7 +17,7 @@
 
 <style scoped>
     .banner{
-        background: greenyellow;
         color: red;
+        
     }
 </style>
